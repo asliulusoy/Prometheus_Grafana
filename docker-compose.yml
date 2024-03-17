@@ -1,0 +1,37 @@
+# A example scrape configuration for running Prometheus with Docker.
+version: '3'
+
+networks:
+  example-monitoring:
+#(default) example-monitoring: bridge
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus-example
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - "9090:9090"
+    networks:
+      - example-monitoring
+  node-exporter:
+    image: prom/node-exporter
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    networks:
+      - example-monitoring
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    environment:
+      - GRAFANA_ADMIN_PASS=examplepass86
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    networks:
+      - example-monitoring
