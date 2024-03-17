@@ -57,18 +57,21 @@
 
 - Data Source eklenir
     - localhost:9090 yerine container name (prometheus-example:9090) kullanılır.
+      
+    ![prometheus_localhost](https://github.com/asliulusoy/Prometheus_Grafana/assets/132180090/9d5da18b-85ee-4764-840d-25fcbd8a6a3a)
 
-    ![Prometheus](prometheus_localhost.png).
 
     - Output:
+      
+    ![success_output](https://github.com/asliulusoy/Prometheus_Grafana/assets/132180090/c632410f-475b-434b-a510-00f306c9ce66)
 
-    ![Prometheus Success](success_output.png)
 
 - Prometheus üzerinde node_loader1 query testi:
+  
+![prometheus_nodeload1](https://github.com/asliulusoy/Prometheus_Grafana/assets/132180090/1a502a78-08f3-472b-bfe0-5e13e5a53677)
 
-    ![Prometheus_Nodeloader1](prometheus_nodeload1.png)
 
 - Data Visualization için Grafana konfigüre edilir,
-- Grafana üzerinde node_loader1 query testi:
-
-    ![Grafana_Nodeloader1](grafana_nodeload1.png)
+   - Grafana üzerinde node_loader1 query testi:
+  
+![grafana_nodeload1](https://github.com/asliulusoy/Prometheus_Grafana/assets/132180090/aefcf1b8-310b-4e17-b22c-d4e5b735d77f)
